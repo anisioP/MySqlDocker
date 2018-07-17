@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  db:
+    image: andrepinheiro/dockermysql:1.0
+    container_name: codesnippetmysql
+    build: .
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=dbname
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./init/data:/docker-entrypoint-initdb.d
+    restart: always
