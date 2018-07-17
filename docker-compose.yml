@@ -5,8 +5,6 @@ services:
     image: andrepinheiro/dockermysql:1.0
     container_name: mysql
     build: .
-    ports:
-      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=dbname
